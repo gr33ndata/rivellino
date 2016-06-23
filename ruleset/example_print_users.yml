@@ -1,0 +1,21 @@
+rule_description: Printing top 10 users to screen
+active: no
+# Which data node to get the data from.
+# Check config.yml for details.
+source_node: production2
+# Where data node to put the data in.
+# Since we use screen_dump_plugin.
+# No need to put data anywhere, hence none. 
+destination_node: none
+destination_table: none
+action: >
+    SELECT u.id as user_id, 
+           u.username as usern_ame,
+           u.country as country_name
+    FROM t_user as u
+    ORDER BY u.score
+    LIMIT 10; 
+ingress_plugin: mysql_plugin 
+egress_plugin: screen_dump_plugin
+rule_type: single
+debug: no

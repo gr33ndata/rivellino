@@ -1,0 +1,19 @@
+rule_description: Writing data into a table
+active: yes
+# Which data node to get the data from.
+# Check config.yml for details.
+source_node: production1
+# Which data node and table to put resulting data in
+# Check config.yml for details.
+destination_node: production2
+destination_table: t_example
+action: >
+    SELECT u.id as id, 
+           u.rating as rating,
+           DATE_FORMAT(from_unixtime(u.created),'%Y-%m-%d') as created
+    FROM t_user_rating as u
+    WHERE u.deleted is NULL;
+ingress_plugin: mysql_plugin 
+egress_plugin: mysql_plugin
+rule_type: single
+debug: no

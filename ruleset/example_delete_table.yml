@@ -1,0 +1,15 @@
+rule_description: Delete all records in table
+active: no
+# Which data node to delete table data from.
+# Check config.yml for details.
+source_node: production1
+# Since we are not moving data from one source to another,
+# No need to put data anywhere, hence none. 
+destination_node: none
+destination_table: none
+action: >
+  DELETE FROM t_example;
+ingress_plugin: mysql_plugin 
+egress_plugin: none
+rule_type: single
+debug: no

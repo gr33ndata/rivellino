@@ -1,0 +1,17 @@
+# Data Nodes.
+# Where rules read and dump data.
+data_nodes:
+    db_number_one:
+        db_name: production1
+        db_host: 10.0.0.1
+        db_port: 3306
+        db_user: admin
+        db_passwd: adminpass
+    db_number_two:
+        db_name: production2
+        db_host: 10.0.0.2
+        db_port: 3306
+        db_user: admin
+        db_passwd: adminpass
+    data_files:
+        path: data

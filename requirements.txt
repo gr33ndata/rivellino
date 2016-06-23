@@ -1,0 +1,5 @@
+pyyaml
+python-dateutil
+MySQL-python
+requests
+pandas

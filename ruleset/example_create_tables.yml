@@ -1,0 +1,32 @@
+rule_description: Create two tables
+active: no
+# Which data node to create table data on.
+# Check config.yml for details.
+source_node: production1
+# Since we are not moving data from one source to another,
+# No need to put data anywhere, hence none. 
+destination_node: none
+destination_table: none
+action: >
+  CREATE TABLE t_user (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    fullname varchar(255) DEFAULT NULL,
+    email varchar(255) DEFAULT NULL,
+    secret_key varchar(255) DEFAULT NULL,
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
+    updated_at datetime DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CREATE TABLE t_rating (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    user_id int(11) DEFAULT NULL,
+    bizplan_id int(11) DEFAULT NULL,
+    polarization varchar(10) DEFAULT NULL,
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
+    updated_at datetime DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ingress_plugin: mysql_plugin 
+egress_plugin: none
+rule_type: single
+debug: no

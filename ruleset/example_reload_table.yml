@@ -1,0 +1,8 @@
+rule_description: Delete table, then load data into it again
+active: no
+members:
+    - example_delete_table.yml
+    - example_write_table.yml
+# Calling multiple sub-rules in order, hence group rule
+rule_type: group
+debug: no
