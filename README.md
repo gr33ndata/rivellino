@@ -1,8 +1,6 @@
 Rivellino 
 =========
 
-![Rivellino](docs/rivellino.png)
-
 Rivellino is an ETL (Extract, Transform, Load) tool. It reads data from multiple data sources, transforms them into a format suitable for your data warehouse then loads them into the data warehouse tables.
 
 Ruleset
@@ -101,6 +99,13 @@ Example:
     py rivellino.py -p -r reset_datawarehouse.yml
     py rivellino.py -p -r populate_datawarehouse.yml
 
+
+Why Rivellino
+-------------
+
+![Rivellino](docs/rivellino-icon.png)
+
+Roberto Rivellino is a former Brazilian professional footballer. He was one of the stars of Brazil's 1970 FIFA World Cup winning team. His skills with the ball, are what this tools aspires to have with data.
 
 Contacts
 --------
