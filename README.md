@@ -69,9 +69,18 @@ __Note:__ I am planning to explain the plugins included and their rules syntax i
 Installation
 -------------
 
-You first need to install all required libraries:
+Firstly, create and activate a conda environment:
 
-    pip install -r requirements.txt
+```sh
+conda create -n rivellino python=3.9
+conda activate rivellino
+```
+
+Then, install the requirements:
+
+```sh
+pip install -r requirements.txt
+```
 
 Then copy config.yml.example to config.yml
 
